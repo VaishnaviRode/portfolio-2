@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>Web Design Mastery | Responsive Portfolio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">Vaishnavi Rode</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#" onclick="scrollToAbout()">About</a></li>
+          <li><a href="./resume.html">Resume</a></li>
+          <li><a href="#" onclick="scrollToProjects()">Projects</a></li>
+          <li><a href="#" onclick="scrollToContact()">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      function scrollToAbout() {
+        const aboutSection = document.querySelector('.about');
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function scrollToProjects() {
+        const aboutSection = document.querySelector('.project__section');
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function scrollToContact() {
+        const aboutSection = document.querySelector('.contact__section');
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+
+    </script>
+    
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">HELLO !</p>
+          <h1 class="title">
+            I'm <span>Vaishnavi<br />a</span>  <span id="jobTitle"></span>
+          </h1>
+          <!-- <p class="description">
+            Welcome to my web developer portfolio! I'm Mitchell, a skilled and
+            creative web developer with a passion for creating beautiful,
+            responsive, and user-friendly websites. I've worked on a variety of
+            web projects, ranging from personal blogs to e-commerce platforms.
+          </p> -->
+          <div class="action__btns">
+            <a href="www.linkedin.com/in/vaishnavi-rode-291741259" class="linkedin">
+              <img src="./assects/linkedin.png" alt="LinkedIn" class="logo">
+              LinkedIn
+            </a>
+            <a href="https://github.com/VaishnaviRode" class="github">
+              <img src="./assects/github.png" alt="GitHub" class="logo">
+              My Works
+            </a>
+          </div>
+          
+        </div>
+        <div class="image">
+          <img src="./vaishnavi.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+    <script>
+      const jobTitles = [
+          "Frontend Developer",
+          "Backend Developer",
+          "Fullstack Developer",
+      ];
+
+      let currentJobIndex = 0; // Keeps track of current job title
+
+      function typeWriter(text, i = 0, isErasing = false) {
+          if (isErasing) {
+              if (i >= 0) {
+                  document.getElementById("jobTitle").textContent = text.substring(0, i);
+                  setTimeout(() => typeWriter(text, i - 1, true), 50);
+              } else {
+                  isErasing = false;
+                  currentJobIndex = (currentJobIndex + 1) % jobTitles.length; // Move to next job title
+                  typeWriter(jobTitles[currentJobIndex]); // Start typing next title
+              }
+          } else {
+              if (i < text.length) {
+                  document.getElementById("jobTitle").textContent += text.charAt(i);
+                  setTimeout(() => typeWriter(text, i + 1), 50);
+              } else {
+                  setTimeout(() => typeWriter(text, i, true), 1000); // Delay before erasing
+              }
+          }
+      }
+
+      // Start typing the first job title
+      typeWriter(jobTitles[currentJobIndex]);
+  </script>
+
+
+
+<!-- about section -->
+<section class="about">
+  <div class="about__container">
+    <h2>About Me</h2>
+    <div class="about__content">
+      
+        <img class="aboutimg"src="./../assects/v.png" alt="Vaishnavi" />
+      
+      <div class="about_p">
+      <p>Passionate full-stack web developer skilled in React, Spring Boot, MySQL, HTML, CSS, and Java. Quick learner, excellent team member. Event Manager at IUCEE Student Chapter, driving excellence in web development with a creative touch.</p>
+    </div>
+    </div>
+  </div>
+<div class="mainabout">
+  <div class="subabout">
+   <p><strong>Name : </strong> Vaishnavi Yogesh Rode</p>
+   <p><strong>City : </strong> Pune,Maharashtra</p>
+   <p><strong>Languages : </strong> English,Hindi,Marathi</p>
+   <p><strong>Skills : </strong> Java, C++, Python, DSA, Html, CSS, Javascript, react, springboot, Mysql, Docker, git, Microservices, </p>
+   <p><strong>Hobbies : </strong> Art and calligraphy, Classical Singing, Playing Harmonium</p>
+   <div class="action__btns">
+    <a href="https://drive.google.com/drive/u/0/folders/1mxBtYTEDpprqMG7w99E4MLTXtA5k9ZjS" class="linkedin">
+      
+      Certifications
+    </a></div>
+
+  </div>
+
+  <div class="skills">
+    
+  <div class="logo">
+    <img src="./assects/html.jpg"></img>
+    <img src="./assects/css.jpg"></img>
+    <img src="./assects/react.jpg"></img>
+    <img src="./assects/js.jpg"></img>
+    <img src="./assects/springboot.png"></img>
+    <img src="./assects/mysql.png"></img>
+    <img src="./assects/cpp.png"></img>
+    <img src="./assects/java.png"></img>
+    <img src="./assects/python.jpg"></img>
+    <img src="./assects/docker.png"></img>
+    <img src="./assects/git.png"></img>
+  </div>
+  </div>
+
+</div>
+</section>
+
+
+</section>
+
+<!-- education -->
+
+<hr class="line">
+
+<section class="education_section">
+  <h2 class="educationheading">Education</h2>
+<div class="education">
+
+ 
+  <div class="card">
+    <h2>2021-2025</h2>
+    <h3>Bachelor of Technology</h3>
+    <p>MIT Academy of Engineering,Pune</p>
+    <p>CGPA : 8.8</p>
+  </div>
+
+  <div class="card">
+    <h2>2019-2021</h2>
+    <h3>Higher Secondary School</h3>
+    <p>DNYABHAKTI JUNIOR COLLEGE,Pune</p>
+    <p>Percentage : 94%</p>
+  </div>
+
+  <div class="card">
+    <h2>2017-2019</h2>
+    <h3>Secondary School</h3>
+    <p>SHRI SAYAJINATH MAHARAJ ENGLISH MEDIUM SCHOOL,Pune</p>
+    <p>Percentage: 80%</p>
+  </div>
+
+  
+</div>
+</section>
+
+
+<!-- projects section -->
+<section class="project__section">
+  <h2>Projects</h2>
+  <div class="project__container">
+    <!-- Project Card 1 -->
+    <div class="project__card">
+     <a href="https://github.com/VaishnaviRode/Trip_Nest"> <img src="./assects/TripNest.png" alt="Project 1"></a>
+      
+      <h3>TripNest</h3>
+      <p>This web-application is a E-Commerce website designed specifically for tours with the main component for frontend using react.js and Springboot for backend. To help users simplify their tour/vacation bookings.</p>
+      <p>Key Skills: HTML, CSS, Reactjs, springboot, MySQL</p>
+    </div>
+
+    <!-- Project Card 2 -->
+    <div class="project__card">
+      <img src="./assects/ServiceConnect.png" alt="Project 2">
+      
+      <h3>ServiceConnect</h3>
+      <p>This microservice-based web app simplifies user connections with reliable service providers. It provides a secure platform for user registration, authentication, and seamless interaction with verified professionals in diverse categories.</p>
+      <p>Key Skills: HTML, CSS, React, Springboot, Microservices, MySQL</p>
+    </div>
+
+    <!-- Project Card 3 -->
+    <div class="project__card">
+      <img src="./assects/supply.jpg" alt="Project 3">
+      
+      <h3>Smart Supply Chain Management using AI and Blockchain</h3>
+      <p>Revolutionize supply chain management with AI and blockchain integration to tackle inefficiencies, lack of transparency, and fraud, thereby optimizing operations for a seamless and secure global supply chain.</p>
+      <p>Key Skills: Reactjs, Etherium, Firebase, </p>
+    </div>
+
+    <div class="project__card">
+    <a href="https://github.com/PrithvirajGorule/Kaustubh-Enterprizes"> <img src="./assects/KaustubhEnterprise.png" alt="Project 3"></a>
+      
+      <!-- Project Card 3 -->
+
+  <h3>Kaustubh Enterprise Website</h3>
+  <p>Developed a website for Kaustubh Enterprise, a leading provider of sheet metal at wholesale rates. They specialize in various types of sheet metal, including CR, HR, GR, SS, Aluminum, etc. Additionally, they offer cut-to-size and High Strength Alloy Sheets with global delivery services.</p>
+  <p>The website showcases their range of products and services, providing an online platform for customers to explore and inquire about their offerings also apply for quotation</p>
+  <p>Key Skills: React, Firebase, HTML, CSS</p>
+</div>
+
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+
+<section class="contact__section">
+  <h2>Contact</h2>
+  <div class="contact__container">
+    <!-- Image -->
+  
+    
+    <!-- Contact Information -->
+    <div class="contact__info">
+      <div class="info__item">
+        <i class="ri-mail-line"></i>
+        <p>vaishnavirode18@gmail.com vaishnavi.rode@mitaoe.ac.in</p>
+        
+      </div>
+      <div class="info__item">
+        <i class="ri-map-pin-line"></i>
+        <p>Pune</p>
+      </div>
+      <div class="info__item">
+        <i class="ri-linkedin-line"></i>
+        <p>www.linkedin.com/in/vaishnavi-rode-291741259</p>
+      </div>
+      <div class="info__item">
+        <i class="ri-phone-line"></i>
+        <p>8767730230</p>
+      </div>
+    </div>
+    
+    <!-- Contact Form -->
+   
+  </div>
+</section>
+
+<footer class="bg-body-tertiary text-center">
+  <div class="container p-4 pb-0">
+    <section class="mb-4 social-icons">
+      <a class="btn text-white btn-floating m-1 facebook" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+      <a class="btn text-white btn-floating m-1 twitter" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+      <a class="btn text-white btn-floating m-1 google" href="#!" role="button"><i class="fab fa-google"></i></a>
+      <a class="btn text-white btn-floating m-1 instagram" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+      <a class="btn text-white btn-floating m-1 linkedintwo" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn text-white btn-floating m-1 githubtwo" href="#!" role="button"><i class="fab fa-github"></i></a>
+      
+    </section>
+    <div class="copy">
+      © Copyright, Designed by Vaishnavi Rode
+      <a class="text-body" href="https://mdbootstrap.com/"></a>
+    </div>
+  </div>
+
+
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  
+  <!-- Copyright -->
+</footer>
+
+
+
+
+
+  </body>
+</html>
